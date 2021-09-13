@@ -1,3 +1,6 @@
+# 13.3
+# t: O(n log n)
+# s: O(1)
 def h_index(citations):
     citations.sort()
     size = len(citations)
