@@ -1,4 +1,4 @@
-# 15.0
+# 15.0 greatest common divisor (GCD)
 
 # init：
 # def GCD(a, b):
