@@ -39,6 +39,14 @@ class LinkedList:
 
     # def delete_after(self, node):
     #     node.next = node.next.next
+    def print_linked_list_in_reverse(self):
+        cur = self.head
+        nodes = []
+        while cur:
+            nodes.append(cur.data)
+            cur = cur.next
+        while nodes:
+            print(nodes.pop())
 
 
 test = LinkedList()
