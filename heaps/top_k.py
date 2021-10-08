@@ -1,4 +1,6 @@
 # https://www.geeksforgeeks.org/k-largestor-smallest-elements-in-an-array/
+# https://www.youtube.com/watch?v=3Z8QDJynDgo
+# https://www.geeksforgeeks.org/python-itertools-islice/
 # import heapq
 
 # def kLargest(arr, k):
