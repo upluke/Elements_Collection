@@ -30,14 +30,16 @@ from collections import defaultdict
 # the computation  consists of n callss to sort and n insertions into the hash table. Sorting all the keys has time complexity o(nm log m). The insertions add a time complexity of O(nm), yielding O(nm log m) time complexity in total.
 
 
-def groupAnagrams(dictionary):
+def find_anagrams(dictionary):
     sorted_string_to_anagrams = defaultdict(list)
 
     for s in dictionary:
+        # sorts the string, uses it as a key, and then appends the original
+        # string as another value into hash table.
         sorted_string_to_anagrams[''.join(sorted(s))].append(s)
 
     return [group for group in sorted_string_to_anagrams.values() if len(group) >= 2]
 
 
 # [['eat', 'tea', 'ate'], ['tan', 'nat']]
-print(groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"]))
+print(find_anagrams(["eat", "tea", "tan", "ate", "nat", "bat"]))
