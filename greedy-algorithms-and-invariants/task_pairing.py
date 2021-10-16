@@ -17,6 +17,21 @@ def optimum_task_assignment(task_durations):
 
 print(optimum_task_assignment([3, 4, 2, 1]))  # [[1,4], [2,3]]
 
+# my ver:
+PairedTasks = collections.namedtuple('PairedTasks', ('task_1', 'task_2'))
+
+
+def optimum_task_assignment(task_durations):
+
+    task_durations.sort()
+    res = []
+    for i in range(len(task_durations) // 2):
+        res.append(PairedTasks(task_durations[i], task_durations[~i]))
+    return res
+
+
+print(optimum_task_assignment([3, 4, 2, 1]))  # [[1,4], [2,3]]
+
 
 # variant https://leetcode.com/problems/find-minimum-time-to-finish-all-jobs/
 # Example 1:
