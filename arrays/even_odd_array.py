@@ -81,3 +81,7 @@ def move(arr, n):
 arr = [1, -1, -3, -2, 7, 5, 11, 6]
 n = len(arr)
 print(move(arr, n))
+
+
+# this question is used to two parts of a list with 2 variables, refer to dutch_national_flag.py to see
+# sorting three parts of a list with 3 variables
