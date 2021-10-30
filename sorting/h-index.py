@@ -1,5 +1,5 @@
 # 13.3 computing the h-Index
-
+# time: O(nlogn) space: O(1)
 # https://leetcode.com/problems/h-index/
 
 # Example 1:
