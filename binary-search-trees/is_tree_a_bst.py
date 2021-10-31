@@ -1,3 +1,6 @@
+#  14.1 Test if a binary tree satisfies the BST property
+# time: O(n), and the addtional space complexity is O(h), where h is the height of the tree
+
 import collections
 
 
@@ -9,9 +12,6 @@ class Node:
 class BST:
     def __init__(self):
         self.root = None
-
-    #  14.2 Test if a binary tree satisfies the BST property
-    # time: O(n), and the addtional space complexity is O(h), where h is the height of the tree
 
     def is_binary_tree_bst(self, tree):
         def are_keys_in_range(tree,
@@ -87,7 +87,11 @@ tree.root.right = Node(11)
 
 tree.root.left.left = Node(3)
 tree.root.left.right = Node(7)
-
+#     9
+#    / \
+#   5   11
+#  / \
+# 3   7
 
 print(tree.isValidBST(tree.root))
 print(tree.is_binary_tree_bst(tree.root))

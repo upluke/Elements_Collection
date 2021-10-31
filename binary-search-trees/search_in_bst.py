@@ -1,3 +1,4 @@
+# 14.0
 class Node:
     def __init__(self, data):
         self.data, self.left, self.right = data, None, None
