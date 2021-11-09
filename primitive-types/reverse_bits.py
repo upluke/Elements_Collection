@@ -14,3 +14,14 @@ def reverse_bits(x) -> int:
 # print(reverse_bits(10))
 # 1351510410656	405942121183313920
 # 1351510410656 in binary is 0b10011101010101100010011000100010110100000, and its reverse in binary is 0b10110100010001100100011010101011100100000000000000000000000
+
+
+# lc:
+# https://leetcode.com/problems/reverse-bits/
+def reverseBits(n):
+    res = 0
+    for i in range(32):
+        res = (res << 1) ^ (n & 1)
+        n >>= 1
+#     return res
+# print(reverseBits(00000010100101000001111010011100))
