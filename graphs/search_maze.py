@@ -1,3 +1,5 @@
+# 18.1 Search a maze
+# the time complexity is the same as that for DFS, namely O(|V|+|E|)
 import collections
 
 
