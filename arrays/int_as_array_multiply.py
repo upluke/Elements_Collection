@@ -1,7 +1,17 @@
-
 # 5.3 multiply two arbitrary-precision integers
 # There are m partial products, each with at most n+1 digits. We perform O(1) operations on digit in each partial product, so the time complexity is O(nm)
 
+# As in solution 5.2 on Page 44, the possibility of overflow precludes us from converting to the integer type.
+# instead we can use the grade-school algorithm for multiplication which consists of multiplying the first number by each digit of the second, and then adding all the resulting terms.
+# from a spce perspective, it is better to incrementally add the terms rather than compute all of them individually and then add them up. The number of digits required for the product is at most n+m for n and m digit operands, so we use an array of size n+m for the result.
+
+# for example, when multiplying 123 with 987, we would form 7*123=861, then we would form 8*123*10 =9840, which we would add to 861 to get 10701. Then we would form 9*123*100=110700, which we would add to 10701 to get the final result 121401.
+
+# 123    123    123
+# *
+# 7 *1   8*10   9*100
+
+# 7    +  80 +  900 =987
 def multiply(num1, num2):
 
     sign = -1 if (num1[0] < 0) ^ (num2[0] < 0) else 1
