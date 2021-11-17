@@ -1,3 +1,6 @@
+# 9.1 Test if a binary tree is height-balanced
+# The program implements a postorder traversal with some calls possibly being eliminated because of early termination. Specifically, if any left subtree is not height-balanced we do not need to visit the corresponding right subtree. The function call stack corresponds to a sequence of calls from the root through the unique path to the current node, and the stack height is therefore bounded by the height of the tree, leading to an O(h) space bound. The time complexity is the same as that for a postorder traversal, namely O(n).
+#
 # how to tell a unbalanced tree: https://cs.stackexchange.com/questions/54171/is-a-balanced-binary-tree-a-complete-binary-tree
 # namedtuple: https://realpython.com/python-namedtuple/
 import collections
