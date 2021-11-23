@@ -1,5 +1,5 @@
 
-# 13.5 remove first-name duplicates
+# 13.4 remove first-name duplicates
 # time: O(nlogn) space: O(1)http://talk.elementsofprogramminginterviews.com/t/remove-first-name-duplicates/808/2
 import itertools
 
