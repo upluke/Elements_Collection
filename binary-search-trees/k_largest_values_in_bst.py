@@ -54,3 +54,115 @@ print(find_k_largest_in_bst(tree.root, 2))  # [11, 9]
 
 # varient:
 # https://www.geeksforgeeks.org/kth-largest-element-in-bst-when-modification-to-bst-is-not-allowed/
+
+# gfg:
+# Time Complexity: O(h + k).
+# The code first traverses down to the rightmost node which takes O(h) time, then traverses k elements in O(k) time. Therefore overall time complexity is O(h + k).
+# Auxiliary Space: O(h).
+# Max recursion stack of height h at a given time.
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.left = None
+        self.right = None
+
+
+class BST:
+    def __init__(self):
+        self.root = None
+
+
+def kthLargestUtil(root, k, c):
+    # Base cases, the second condition
+    # is important to avoid unnecessary
+    # recursive calls
+    if root == None or c[0] >= k:
+        return
+
+    # Follow reverse inorder traversal
+    # so that the largest element is
+    # visited first
+    kthLargestUtil(root.right, k, c)
+
+    # Increment count of visited nodes
+    c[0] += 1
+
+    # If c becomes k now, then this is
+    # the k'th largest
+    if c[0] == k:
+        return root.data
+
+    # Recur for left subtree
+    kthLargestUtil(root.left, k, c)
+
+# Function to find k'th largest element
+
+
+def kthLargest(root, k):
+    # Initialize count of nodes
+    # visited as 0
+    c = [0]
+    # Note that c is passed by reference
+    kthLargestUtil(root, k, c)
+
+
+tree = BST()
+tree.root = Node(9)
+
+tree.root.left = Node(5)
+tree.root.right = Node(11)
+
+tree.root.left.left = Node(3)
+tree.root.left.right = Node(7)
+
+#     9
+#    / \
+#   5   11
+#  / \
+# 3   7
+
+print(kthLargest(tree.root, 2))
+
+
+# init:
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.left = None
+        self.right = None
+
+
+class BST:
+    def __init__(self):
+        self.root = None
+
+
+def kthLargest(root, k):
+    def helper(root):
+        if root and len(temp) < k:
+            helper(root.right)
+            if len(temp) < k:
+                temp.append(root.data)
+                helper(root.left)
+
+    temp = []
+    helper(root)
+    return temp.pop()
+
+
+tree = BST()
+tree.root = Node(9)
+
+tree.root.left = Node(5)
+tree.root.right = Node(11)
+
+tree.root.left.left = Node(3)
+tree.root.left.right = Node(7)
+
+#     9
+#    / \
+#   5   11
+#  / \
+# 3   7
+
+print(kthLargest(tree.root, 2))
