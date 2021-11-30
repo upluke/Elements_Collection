@@ -40,6 +40,7 @@ print(fill_surrounded_regions([["X", "X", "X", "X"], [
       "X", "O", "O", "X"], ["X", "X", "O", "X"], ["X", "O", "X", "X"]]))
 
 # gfg:
+# Time Complexity of the above solution is O(MN). Note that every element of matrix is processed at most three times.
 # https://www.geeksforgeeks.org/given-matrix-o-x-replace-o-x-surrounded-x/
 
 # Size of given matrix is M x N
