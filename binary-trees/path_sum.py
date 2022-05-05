@@ -1,5 +1,6 @@
 # 9.6 Find a root to leaf path with specified sum
 # https://leetcode.com/problems/path-sum/
+# The time complexity and space complexity are O(n) and O(h), respectively.
 
 class Node:
     def __init__(self, val):
