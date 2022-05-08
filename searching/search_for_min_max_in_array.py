@@ -1,5 +1,6 @@
 # 11.7 Find the ind and max simultaneously
 # Design an algorithm to find the min dand max elements in an array. For example, if A=[3,2,5,1,2,4], you should return 1 and the min and 5 for the max.
+# the time complexity is O(n) and the space complexity is O(1)
 import collections
 
 MinMax = collections.namedtuple('MinMax', ('smallest', 'largest'))
